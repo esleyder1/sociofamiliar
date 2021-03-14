@@ -1,33 +1,343 @@
-<div class="submit-form">
-  <div *ngIf="!submitted">
-    <div class="form-group">
-      <label for="title">Title</label>
-      <input
-        type="text"
-        class="form-control"
-        id="title"
-        required
-        [(ngModel)]="tutorial.title"
-        name="title"
-      />
+<div class="container">
+  <li class="list-group-item d-flex align-items-justify list-group-item-light pull-right" aria-current="true">Fecha de
+    diligenciamiento Inicial: {{date | date:'dd/MM/yyyy'}}</li>
+  <br>
+  <div class="row">
+
+    <div class="col-sm">
+
+      <!--grupos-->
+      <ul class="list-group">
+        <li class="list-group-item  list-group-item-success" aria-current="true">INFORMACIÓN DE LA UNIDAD DE SERVICIO
+        </li>
+
+        <!--formulario -->
+
+        <div class="section-form">
+          <div *ngIf="!submitted">
+            <div class="form-group">
+              <label for="title">Nombre de la Unidad de Servicio-UDS (a la que asiste la niña o el niño)*</label>
+              <input type="text" class="form-control" id="title" required [(ngModel)]="tutorial.title" name="title" />
+            </div>
+
+            <div class="form-group">
+              <label for="description">Codigo de la UDS en Cuentame*</label>
+              <input class="form-control" id="description" required [(ngModel)]="tutorial.description"
+                name="description" />
+            </div>
+
+
+            <div class="form-group">
+              <label for="tipo_documento">Servicio Prestado en la UDS*</label>
+              <select class="form-control" aria-label="Seleccione una opción">
+                <option selected>Seleccione una opción</option>
+                <option value="1">ATENCIÓN A NIÑOS HASTA LOS 3 AÑOS EN ESTABLECIMIENTOS DE RECLUSIÓN A MUJERES INTEGRAL
+                </option>
+                <option value="2">CDI CON ARRIENDO - INSTITUCIONAL INTEGRAL</option>
+                <option value="3">CDI SIN ARRIENDO - INSTITUCIONAL INTEGRAL</option>
+                <option value="4">DESARROLLO INFANTIL EN MEDIO FAMILIAR - FAMILIAR INTEGRAL</option>
+                <option value="5">HCB AGRUPADOS -INSTITUCIONAL TRADICIONAL</option>
+                <option value="6">HCB FAMI-FAMILIAR TRADICIONAL</option>
+                <option value="7">HCB INTEGRAL -COMUNITARIO INTEGRAL</option>
+                <option value="8">HCB TRADICIONAL- COMUNITARIO (T)</option>
+                <option value="9">HOGARES EMPRESARIALES - INSTITUCIONAL INTEGRAL</option>
+                <option value="10">HOGARES INFANTILES - INSTITUCIONAL INTEGRAL</option>
+                <option value="11">HOGARES MULTIPLES - INSTITUCIONAL INTEGRAL</option>
+                <option value="12">JARDINES SOCIALES - INSTITUCIONAL INTEGRAL</option>
+                <option value="13">LACTANTES Y PREESCOLARES - INSTITUCIONAL INTEGRAL</option>
+                <option value="14">SERVICIO ESPECIAL PARA LA PRIMERA INFANCIA - COMUNITARIO INTEGRAL</option>
+                <option value="15">SERVICIO ESPECIAL PARA LA PRIMERA INFANCIA - FAMILIAR INTEGRAL</option>
+                <option value="16">SERVICIO ESPECIAL PARA LA PRIMERA INFANCIA - INSTITUCIONAL INTEGRAL</option>
+                <option value="17">ATENCIÓN PROPIA E INTERCULTURAL</option>
+                <option value="18">DESARROLLO INFANTIL EN MEDIO FAMILIAR CON ARRIENDO - FAMILIAR INTEGRAL</option>
+                <option value="19">GRADO TRANSICIÓN CON ATENCIÓN INTEGRAL</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!--Datos personales-->
+        <li class="list-group-item  list-group-item-success" aria-current="true">INFORMACIÓN DEL USUARIO (NIÑA/NIÑO)
+        </li>
+        <div class="section-form">
+          <div class="form-group">
+            <label for="description">Primer Nombre*</label>
+            <input class="form-control" id="description" required [(ngModel)]="tutorial.description"
+              name="description" />
+          </div>
+
+
+          <div class="form-group">
+            <label for="description">Segundo Nombre</label>
+            <input class="form-control" id="description" required [(ngModel)]="tutorial.description"
+              name="description" />
+          </div>
+
+
+          <div class="form-group">
+            <label for="description">Primer Apellido*</label>
+            <input class="form-control" id="description" required [(ngModel)]="tutorial.description"
+              name="description" />
+          </div>
+
+
+          <div class="form-group">
+            <label for="description">Segundo Apellido</label>
+            <input class="form-control" id="description" required [(ngModel)]="tutorial.description"
+              name="description" />
+          </div>
+
+
+          <div class="form-group">
+            <label for="tipo_documento">Tipo de Documento de Identidad*</label>
+            <select class="form-control" aria-label="Seleccione una opción">
+              <option selected>Seleccione una opción</option>
+              <option value="1">Registro Civil</option>
+              <option value="2">Tarjeta de Identidad</option>
+              <option value="3">Sin documento</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="description">Diligenciar el NUIP*</label>
+            <input class="form-control" id="description" required [(ngModel)]="tutorial.description"
+              name="description" />
+          </div>
+
+          <div class="form-group">
+            <label for="description">Grupo étnico con el que se autoreconoce la niña o el niño*</label>
+            <select class="form-control" aria-label="Seleccione una opción">
+              <option selected>Seleccione una opción</option>
+              <option value="1">Negro</option>
+              <option value="2">Afrocolombiano</option>
+              <option value="3">Indigena</option>
+              <option value="4">Rrom/Gitano</option>
+              <option value="5">Raizal del archipielago de San Andres,Providencia y Santa Catalina</option>
+              <option value="6">Palenquero</option>
+              <option value="7">No se autoreconoce en ninguno de los anteriores</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="description">Indique a que comunidad, resguardo o territorio colectivo pertenece*</label>
+            <input class="form-control" id="description" required [(ngModel)]="tutorial.description"
+              name="description" />
+          </div>
+
+          <div class="form-group">
+            <label for="description">¿El beneficiario habla la lengua nativa del grupo étnico al que pertenece?*</label>
+            <select class="form-control" aria-label="Seleccione una opción">
+              <option selected>Seleccione una opción</option>
+              <option value="1">Si</option>
+              <option value="2">No</option>
+            </select>
+          </div>
+
+
+          <div>
+            <p class="text-bold">Datos de contacto del Adulto Responsable o Acudiente</p>
+          </div>
+          <div class="form-group">
+            <label for="description">Nombres y apellidos*</label>
+            <input class="form-control" id="description" required [(ngModel)]="tutorial.description"
+              name="description" />
+          </div>
+
+          <div class="form-group">
+            <label for="description">Parentesco*</label>
+            <select class="form-control" aria-label="Seleccione una opción">
+              <option selected>Seleccione una opción</option>
+              <option value="1">Madre</option>
+              <option value="2">Padre</option>
+              <option value="3">Madrasta/Padrasto</option>
+              <option value="4">Madre Sustituta</option>
+              <option value="5">Hermano(a)</option>
+              <option value="6">Primo(a)</option>
+              <option value="7">Pariente</option>
+              <option value="8">Empleada/Niñera</option>
+              <option value="9">Padrino/Madrina</option>
+              <option value="10">Abuelo/Abuela</option>
+              <option value="11">Sobrino(a)</option>
+              <option value="12">Cuñado(a)</option>
+              <option value="13">Amigo(a)</option>
+              <option value="14">Vecino(a)</option>
+
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="description">Numero de contacto en caso de emergencia*</label>
+            <input class="form-control" id="description" required [(ngModel)]="tutorial.description"
+              name="description" />
+          </div>
+
+
+        </div>
+
+        <div *ngIf="submitted">
+          <h4>¡Ficha guardada corectamente!</h4>
+          <button class="btn btn-success" (click)="newTutorial()">Add</button>
+        </div>
+
+
+
+      </ul>
     </div>
+    <div class="col-sm">
 
-    <div class="form-group">
-      <label for="description">Description</label>
-      <input
-        class="form-control"
-        id="description"
-        required
-        [(ngModel)]="tutorial.description"
-        name="description"
-      />
-    </div>
+      <!--Datos personales-->
+      <li class="list-group-item  list-group-item-success" aria-current="true">SALUD</li>
+      <div class="section-form">
+        <div class="form-group">
+          <label for="description">Se encuentra afiliado al Sistema General de Seguridad Social en Salud*</label>
+          <select class="form-control" aria-label="Seleccione una opción">
+            <option selected>Seleccione una opción</option>
+            <option value="1">Si</option>
+            <option value="2">No</option>
+          </select>
+        </div>
 
-    <button (click)="saveTutorial()" class="btn btn-success">Submit</button>
-  </div>
+        <div class="form-group">
+          <label for="description">En caso de no estar afiliado al Sistema General de Seguridad Social en Salud ¿Cuál es
+            la razon?*</label>
+          <input class="form-control" id="description" required [(ngModel)]="tutorial.description" name="description" />
+        </div>
 
-  <div *ngIf="submitted">
-    <h4>You submitted successfully!</h4>
-    <button class="btn btn-success" (click)="newTutorial()">Add</button>
-  </div>
-</div>
+        <div class="form-group">
+          <label for="description">Nombre de la Entidad Promotora de Salud a la que se encuentra afiliado*</label>
+          <input class="form-control" id="description" required [(ngModel)]="tutorial.description" name="description" />
+        </div>
+
+        <div class="section-form">
+          <div class="form-group">
+            <label for="description">¿La niña o niño cuenta con el carné de vacunación actualizado?*</label>
+            <select class="form-control" aria-label="Seleccione una opción">
+              <option selected>Seleccione una opción</option>
+              <option value="1">Si</option>
+              <option value="2">No</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="description">En caso de no contar con el carné de vacunación al dia según la edad de la niña o
+              el niño, ¿Cuál es la razón?*</label>
+            <input class="form-control" id="description" required [(ngModel)]="tutorial.description"
+              name="description" />
+          </div>
+
+          <div class="section-form">
+            <div class="form-group">
+              <label for="description">Si la niña o el niño es mayor de un (1) año, ¿Ha asistido a controles de salud
+                oral?*</label>
+              <select class="form-control" aria-label="Seleccione una opción">
+                <option selected>Seleccione una opción</option>
+                <option value="1">Si</option>
+                <option value="2">No</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="description">En caso de no haber asistido a controles de salud oral, ¿Cuál es el motivo por el
+                cual no ha asistido a los controles?*</label>
+              <input class="form-control" id="description" required [(ngModel)]="tutorial.description"
+                name="description" />
+            </div>
+
+            <div class="section-form">
+              <div class="form-group">
+                <label for="description">La niña o niño menor de cuatro (4) años ¿Ha recibido valoración
+                  oftalmológica?*</label>
+                <select class="form-control" aria-label="Seleccione una opción">
+                  <option selected>Seleccione una opción</option>
+                  <option value="1">Si</option>
+                  <option value="2">No</option>
+                </select>
+              </div>
+
+              <div class="section-form">
+                <div class="form-group">
+                  <label for="description">La niña o niño menor de cinco(5) años ¿Ha recibido valoración
+                    auditiva?*</label>
+                  <select class="form-control" aria-label="Seleccione una opción">
+                    <option selected>Seleccione una opción</option>
+                    <option value="1">Si</option>
+                    <option value="2">No</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="description">Si la niña o el niño ha asistido a consultas médicas distintas a las de
+                    crecimiento y desarrollo (urgencias o consulta externa), indique el motivo de la consulta*</label>
+                  <input class="form-control" id="description" required [(ngModel)]="tutorial.description"
+                    name="description" />
+                </div>
+
+                <div class="section-form">
+                  <div class="form-group">
+                    <label for="description">¿La niña o niño es alérgico a algún medicamento?*</label>
+                    <select class="form-control" aria-label="Seleccione una opción">
+                      <option selected>Seleccione una opción</option>
+                      <option value="1">Si</option>
+                      <option value="2">No</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="description">Si la respuesta anterior es SI, indique el medicamento al cual es alérgico*</label>
+                    <input class="form-control" id="description" required [(ngModel)]="tutorial.description"
+                      name="description" />
+                  </div>
+
+
+
+
+                  <!--   <div class="submit-form">
+        <div *ngIf="!submitted">
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input
+              type="text"
+              class="form-control"
+              id="title"
+              required
+              [(ngModel)]="tutorial.title"
+              name="title"
+            />
+          </div>
+      
+          <div class="form-group">
+            <label for="description">Description</label>
+            <input
+              class="form-control"
+              id="description"
+              required
+              [(ngModel)]="tutorial.description"
+              name="description"
+            />
+          </div>
+
+      
+          <button (click)="saveTutorial()" class="btn btn-success">Submit</button>
+        </div>
+      
+        <div *ngIf="submitted">
+          <h4>You submitted successfully!</h4>
+          <button class="btn btn-success" (click)="newTutorial()">Add</button>
+        </div>
+      </div>
+      -->
+
+        <div class="row">
+          <div class="col-sm">
+            <button (click)="saveTutorial()" class="btn btn-success">Guardar Ficha</button>
+          </div>
+          <div class="col-sm">
+            <button (click)="saveTutorial()" class="btn btn-danger">Cancelar Ficha</button>
+          </div>
+          
+        </div>
+
+      
+                </div>
+              </div>
+            </div>
