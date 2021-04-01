@@ -1,0 +1,13 @@
+{
+    "app":  {
+        "name": "Socio Familiar",
+        "validations": {
+            "form_child": {
+                "title": {
+                    "required": "El valor es requerido",
+                    "min": "debe ser mínimo 5 digitos"
+                }
+            }
+        } 
+    },
+}
