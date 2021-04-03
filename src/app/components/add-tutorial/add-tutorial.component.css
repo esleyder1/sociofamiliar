@@ -5,3 +5,12 @@
   font-weight: bold;
   font-size: 1.1rem;
 }
+.text-center{
+  text-align: center !important;
+  width: 100% !important;
+}
+li.list-group-item.d-flex.align-items-justify.list-group-item-light.pull-right span {
+  display: block;
+  text-align: right;
+  width: 100%;
+}

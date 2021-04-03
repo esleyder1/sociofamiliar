@@ -1,7 +1,9 @@
 {
     "app":  {
         "name": "Socio Familiar",
-        "validations": {
+        "v": {
+            "req": "Este campo es obligatorio",
+            "min": "Debe tener mínimo {{num}} caracteres",
             "form_child": {
                 "title": {
                     "required": "El valor es requerido",
@@ -9,5 +11,5 @@
                 }
             }
         } 
-    },
+    }
 }

@@ -9,12 +9,10 @@ import {TranslateService} from '@ngx-translate/core';
 export class AppComponent {
   title = 'Socio Familiar';
 
-  param = {value: 'world'};
-
-  constructor(translate: TranslateService) {
-    translate.addLangs(['es', 'nasa'])
-      translate.setDefaultLang('es');
-      translate.use('es');
+  constructor(t: TranslateService) {
+    t.addLangs(['es', 'nasa'])
+      t.setDefaultLang('es');
+      t.use('es');
   }
 
 }

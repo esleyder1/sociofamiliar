@@ -3,7 +3,8 @@ import Tutorial from 'src/app/models/tutorial.model';
 import { TutorialService } from 'src/app/services/tutorial.service';
 import { DatePipe } from '@angular/common';
 import { ToastrService } from 'ngx-toastr';
-
+import { TranslateService } from '@ngx-translate/core'
+ 
 import { FormBuilder, Validators, FormGroup, FormControl } from '@angular/forms';
 
 
@@ -24,6 +25,7 @@ export class AddTutorialComponent implements OnInit {
     private tutorialService: TutorialService,
     public datepipe: DatePipe,
     private toastr: ToastrService,
+    private translate: TranslateService
 
   ) { }
 
@@ -34,10 +36,8 @@ export class AddTutorialComponent implements OnInit {
 
 
   ngOnInit(): void { 
-        console.log("translate")
-  //   this.translate.get(['es']).subscribe(translations => {
-  //     console.info(this.translateService.instant('app.name'));
-  // });
+   const name = this.translate.instant('app.name')
+   console.log(name)
   }
 
   tutorial: Tutorial = new Tutorial();
@@ -49,7 +49,10 @@ export class AddTutorialComponent implements OnInit {
       this.toastr.info("Campos correctos, Guardando...")
     else
       this.toastr.error("Error al guardar, verifique los campos")
-  }
+
+      Object.keys(this.form.controls).forEach(key => {
+        this.form.controls[key].markAsDirty();
+      });}
 
   saveTutorial(): void {
     //mostrar mensajes de validación de formulario.
