@@ -4,6 +4,7 @@
         "v": {
             "req": "Este campo es obligatorio",
             "min": "Debe tener mínimo {{num}} caracteres",
+            "num": "Debe contener sólo números",
             "form_child": {
                 "title": {
                     "required": "El valor es requerido",

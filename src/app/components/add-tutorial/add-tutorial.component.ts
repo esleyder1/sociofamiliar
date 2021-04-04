@@ -30,6 +30,7 @@ export class AddTutorialComponent implements OnInit {
   ) { }
 
   form = new FormGroup({
+    uds: new FormControl('', [Validators.required, Validators.minLength(10)]),
     title: new FormControl('', [Validators.required, Validators.minLength(10)]),
     description: new FormControl('', [Validators.required, Validators.minLength(10)]),
   });
@@ -70,5 +71,9 @@ export class AddTutorialComponent implements OnInit {
     this.submitted = false;
     this.tutorial = new Tutorial();
   }
-  //multiidioma.
+
+  cancelTutorial(): void {
+    alert()
+  }
+
 }

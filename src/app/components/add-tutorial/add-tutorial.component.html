@@ -5,7 +5,7 @@
       aria-current="true"
     >
       <span
-        >Fecha de diligenciamiento Iniciál:
+        >Fecha de diligenciamiento iniciál:
         {{ date | date: "dd/MM/yyyy" }}</span
       >
     </li>
@@ -17,7 +17,7 @@
         <span>Módulo 1: Información de niñas y niños</span>
       </div>
     </li>
-    <form class="needs-validation" novalidate>
+    <form class="needs-validation" id="form" [formGroup]="form" (submit)="saveTutorial()" novalidat>
       <div class="row">
         <div class="col-sm">
           <ul class="list-group">
@@ -30,14 +30,27 @@
 
             <div class="section-form">
               <div class="form-group">
-                <label for="description">Codigo de la UDS en Cuentame*</label>
+
+                <label for="uds">Codigo de la UDS en Cuentame*</label>
                 <input
+                formControlName=" "
+                  type="text"
                   class="form-control"
-                  id="description"
+              
+                  [ngClass]="{ 'is-invalid': form.get('uds')?.dirty && form.get('uds')?.invalid }" 
+                  id="uds"
                   required
-                  [(ngModel)]="tutorial.description"
-                  name="description"
+                  [(ngModel)]="tutorial.title"
+                  autocomplete="off"
                 />
+                <div  class="invalid-feedback">
+                  <div *ngIf="form.get('uds')?.errors && form.get('uds')?.dirty" >
+                    <div *ngIf="form.get('uds')?.hasError('required')" >{{"app.v.req" | translate}}</div>
+                    <div *ngIf="form.get('uds')?.hasError('minlength')" >{{"app.v.min" | translate:{"num": '10'} }}</div>
+                  </div>
+                </div>
+                
+              
               </div>
 
               <div class="form-group">
@@ -275,13 +288,6 @@
                   name="description"
                 />
               </div>
-            </div>
-
-            <div *ngIf="submitted">
-              <h4>¡Ficha guardada corectamente!</h4>
-              <button class="btn btn-success" (click)="newTutorial()">
-                Add
-              </button>
             </div>
 
             <li
@@ -891,20 +897,20 @@
                 name="description"
               />
             </div>
+            <div class="row">
+              <div class="col-sm formButtons">
+                <button  class="btn btn-success">
+                  Guardar Ficha
+                </button>
+                <button (click)="cancelTutorial()" class="btn btn-danger">
+                  Cancelar Ficha
+                </button>
+              </div>
+
+            </div>
           </div>
 
-          <div class="row">
-            <div class="col-sm">
-              <button (click)="saveTutorial()" class="btn btn-success">
-                Guardar Ficha
-              </button>
-            </div>
-            <div class="col-sm">
-              <button (click)="saveTutorial()" class="btn btn-danger">
-                Cancelar Ficha
-              </button>
-            </div>
-          </div>
+         
         </div>
       </div>
     </form>

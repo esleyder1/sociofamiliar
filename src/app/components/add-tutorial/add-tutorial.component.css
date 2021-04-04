@@ -14,3 +14,19 @@ li.list-group-item.d-flex.align-items-justify.list-group-item-light.pull-right s
   text-align: right;
   width: 100%;
 }
+.col-sm.formButtons {
+  margin: 5px;
+}
+.col-sm.formButtons button.btn-success {
+float: left;
+}
+.col-sm.formButtons button.btn-danger {
+  float: right;
+  }
+@media only screen and (max-width: 600px) {
+  .col-sm.formButtons button {
+    width: 100%;
+    margin: auto;
+    margin-bottom: 5px;
+  }
+}
