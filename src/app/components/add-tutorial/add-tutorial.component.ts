@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core'
 import Tutorial from 'src/app/models/tutorial.model';
 import { TutorialService } from 'src/app/services/tutorial.service';
 import { DatePipe } from '@angular/common';
 import { ToastrService } from 'ngx-toastr';
-import { TranslateService } from '@ngx-translate/core'
+
  
 import { FormBuilder, Validators, FormGroup, FormControl } from '@angular/forms';
 
@@ -21,24 +22,26 @@ export class AddTutorialComponent implements OnInit {
   date = new Date()
 
   constructor(
+    private translate: TranslateService,
     private fb: FormBuilder,
     private tutorialService: TutorialService,
     public datepipe: DatePipe,
     private toastr: ToastrService,
-    private translate: TranslateService
+
 
   ) { }
 
   form = new FormGroup({
     uds: new FormControl('', [Validators.required, Validators.minLength(10)]),
+    primerNombre: new FormControl('', [Validators.required, Validators.minLength(10)]),
     title: new FormControl('', [Validators.required, Validators.minLength(10)]),
     description: new FormControl('', [Validators.required, Validators.minLength(10)]),
   });
 
 
   ngOnInit(): void { 
-   const name = this.translate.instant('app.name')
-   console.log(name)
+    const name = this.translate.instant('app.name')
+    console.log(name);
   }
 
   tutorial: Tutorial = new Tutorial();
@@ -73,7 +76,9 @@ export class AddTutorialComponent implements OnInit {
   }
 
   cancelTutorial(): void {
-    alert()
+    this.form.markAsDirty()
+    this.tutorial = new Tutorial()
+    this.toastr.info("Todos los campos han sido limpiados")
   }
 
 }

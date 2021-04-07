@@ -134,5 +134,8 @@
       }
     }
   },
-  "defaultProject": "Angular11FirestoreCrud"
+  "defaultProject": "Angular11FirestoreCrud",
+  "cli": {
+    "analytics": "ce2082aa-9cf1-40d3-89b3-801e7507de21"
+  }
 }
