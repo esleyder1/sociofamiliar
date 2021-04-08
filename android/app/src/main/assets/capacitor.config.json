@@ -1,9 +1,9 @@
 {
   "appId": "com.dev.sociofamiliar",
-  "appName": "Angular11FirestoreCrud",
+  "appName": "socioFamiliar",
   "bundledWebRuntime": false,
   "npmClient": "npm",
-  "webDir": "dist/Angular11FirestoreCrud",
+  "webDir": "dist/socioFamiliar",
   "plugins": {
     "SplashScreen": {
       "launchShowDuration": 0

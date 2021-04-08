@@ -1,7 +1,7 @@
-import { Tutorial } from './tutorial.model';
+import { ninio } from './ninio.model';
 
-describe('Tutorial', () => {
+describe('ninio', () => {
   it('should create an instance', () => {
-    expect(new Tutorial()).toBeTruthy();
+    expect(new ninio()).toBeTruthy();
   });
 });

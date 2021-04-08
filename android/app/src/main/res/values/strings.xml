@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">Angular11FirestoreCrud</string>
-    <string name="title_activity_main">Angular11FirestoreCrud</string>
+    <string name="app_name">socioFamiliar</string>
+    <string name="title_activity_main">socioFamiliar</string>
     <string name="package_name">com.dev.sociofamiliar</string>
     <string name="custom_url_scheme">com.dev.sociofamiliar</string>
 </resources>

@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {HttpClientModule, HttpClient} from '@angular/common/http';
 import { DatePipe } from '@angular/common'
-import { CommonModule } from '@angular/common';
+import { CommonModule,HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { FormsModule } from '@angular/forms';
@@ -15,9 +15,9 @@ import { environment } from '../environments/environment';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AddTutorialComponent } from './components/add-tutorial/add-tutorial.component';
-import { TutorialDetailsComponent } from './components/tutorial-details/tutorial-details.component';
-import { TutorialsListComponent } from './components/tutorials-list/tutorials-list.component';
+import { AddninioComponent } from './components/add-ninio/add-ninio.component';
+import { ninioDetailsComponent } from './components/ninio-details/ninio-details.component';
+import { niniosListComponent } from './components/ninios-list/ninios-list.component';
 
 //i18n
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
@@ -34,9 +34,9 @@ export function HttpLoaderFactory(http: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
-    AddTutorialComponent,
-    TutorialDetailsComponent,
-    TutorialsListComponent
+    AddninioComponent,
+    ninioDetailsComponent,
+    niniosListComponent
   ],
   imports: [
     CommonModule,
@@ -64,7 +64,8 @@ export function HttpLoaderFactory(http: HttpClient) {
       preventDuplicates: true,
     }),
   ],
-  providers: [DatePipe],
+  providers: [DatePipe,{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }

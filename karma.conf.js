@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/Angular11FirestoreCrud'),
+      dir: require('path').join(__dirname, './coverage/socioFamiliar'),
       subdir: '.',
       reporters: [
         { type: 'html' },

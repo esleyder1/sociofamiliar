@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container comp">
   <div class="starter-template">
     <li
       class="list-group-item d-flex align-items-justify list-group-item-light pull-right"
@@ -29,18 +29,16 @@
             </li>
 
             <div class="section-form">
-              <div class="form-group">
 
-                <label for="uds">Codigo de la UDS en Cuentame*</label>
+              <div class="form-group">
+                <label for="uds">Nombre de la Unidad de Servicio-UDS (a la que asiste la niña o el niño)*</label>
                 <input
                 formControlName="uds"
                   type="text"
                   class="form-control"
-              
                   [ngClass]="{ 'is-invalid': form.get('uds')?.dirty && form.get('uds')?.invalid }" 
                   id="uds"
                   required
-                  
                   autocomplete="off"
                 />
                 <div  class="invalid-feedback">
@@ -49,8 +47,25 @@
                     <div *ngIf="form.get('uds')?.hasError('minlength')" >{{"app.v.min" | translate:{"num": '10'} }}</div>
                   </div>
                 </div>
-                
-              
+              </div>
+
+              <div class="form-group">
+                <label for="uds">Codigo de la UDS en Cuentame*</label>
+                <input
+                formControlName="uds"
+                  type="text"
+                  class="form-control"
+                  [ngClass]="{ 'is-invalid': form.get('uds')?.dirty && form.get('uds')?.invalid }" 
+                  id="uds"
+                  required
+                  autocomplete="off"
+                />
+                <div  class="invalid-feedback">
+                  <div *ngIf="form.get('uds')?.errors && form.get('uds')?.dirty" >
+                    <div *ngIf="form.get('uds')?.hasError('required')" >{{"app.v.req" | translate}}</div>
+                    <div *ngIf="form.get('uds')?.hasError('minlength')" >{{"app.v.min" | translate:{"num": '10'} }}</div>
+                  </div>
+                </div>
               </div>
 
               <div class="form-group">
@@ -128,11 +143,9 @@
                 formControlName="primerNombre"
                   type="text"
                   class="form-control"
-              
                   [ngClass]="{ 'is-invalid': form.get('primerNombre')?.dirty && form.get('primerNombre')?.invalid }" 
                   id="primerNombre"
                   required
-                  
                   autocomplete="off"
                 />
                 <div  class="invalid-feedback">
@@ -140,31 +153,9 @@
                     <div *ngIf="form.get('primerNombre')?.hasError('required')" >{{"app.v.req" | translate}}</div>
                     <div *ngIf="form.get('primerNombre')?.hasError('minlength')" >{{"app.v.min" | translate:{"num": '10'} }}</div>
                   </div>
-                </div>
-                
-              
+                </div>              
               </div>
-              <div class="form-group">
-
-                <input
-                  class="form-control"
-                  id="description"
-                  required
-
-                  name="description"
-                />
-              </div>
-
-              <div class="form-group">
-                <label for="description">Segundo Nombre</label>
-                <input
-                  class="form-control"
-                  id="description"
-                  required
-
-                  name="description"
-                />
-              </div>
+             
 
               <div class="form-group">
                 <label for="description">Primer Apellido*</label>
@@ -921,7 +912,7 @@
             </div>
             <div class="row">
               <div class="col-sm formButtons">
-                <button  class="btn btn-success" (click)="saveTutorial()">
+                <button  class="btn btn-success" (click)="saveninio()">
                   Guardar Ficha
                 </button>
                 <button data-toggle="modalCancelForm" data-target="#modalCancelForm"class="btn btn-danger">
@@ -957,7 +948,7 @@
     </div>
   </div>
 </div>
-<!--<form class="form-group" id="form" [formGroup]="form" (submit)="saveTutorial()" novalidate>
+<!--<form class="form-group" id="form" [formGroup]="form" (submit)="saveninio()" novalidate>
         <div *ngIf="!submitted">
           <div class="form-group">
 
@@ -970,7 +961,7 @@
               [ngClass]="{ 'is-invalid': form.get('title')?.dirty && form.get('title')?.invalid }" 
               id="title"
               required
-              [(ngModel)]="tutorial.title"
+              [(ngModel)]="ninio.title"
               autocomplete="off"
             />
             <div  class="invalid-feedback">
@@ -990,7 +981,7 @@
               [ngClass]="{ 'is-invalid': form.get('description')?.dirty && form.get('description')?.invalid }" 
               id="description"
               required
-              [(ngModel)]="tutorial.description"
+              [(ngModel)]="ninio.description"
             />
             <div  class="invalid-feedback">
               <div *ngIf="form.get('description')?.errors && form.get('description')?.dirty" >
@@ -1004,7 +995,7 @@
       
         <div *ngIf="submitted">
           <h4>You submitted successfully!</h4>
-          <button class="btn btn-success" (click)="newTutorial()" disabled="!form.form.valid" >Add</button>
+          <button class="btn btn-success" (click)="newninio()" disabled="!form.form.valid" >Add</button>
         </div>
       </div>
 

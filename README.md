@@ -1,32 +1,20 @@
-# Angular 11 Firestore CRUD App with AngularFireStore
+# Socio Familiar
 
-For more detail, please visit:
-> [Angular 11 Firestore CRUD: add/get/update/delete documents with AngularFireStore](https://bezkoder.com/angular-11-firestore-crud-angularfirestore/)
+## Especificaciones
+Node: 12.18.2
+NPM: 6.14.8
 
-More Practice:
-> [Angular 11 Firebase CRUD Realtime DB | AngularFireDatabase](https://bezkoder.com/angular-11-firebase-crud/)
-
-> [Angular 11 Firebase Storage: File Upload/Display/Delete example](https://bezkoder.com/angular-11-file-upload-firebase-storage/)
-
-> [Angular 11 CRUD application example with Web API](https://bezkoder.com/angular-11-crud-app/)
-
-Fullstack with Node.js Express:
-> [Angular 11 + Node.js Express + MySQL](https://bezkoder.com/angular-11-node-js-express-mysql/)
-
-> [Angular 11 + Node.js Express + PostgreSQL](https://bezkoder.com/angular-11-node-js-express-postgresql/)
-
-> [Angular 11 + Node.js Express + MongoDB](https://bezkoder.com/angular-11-mongodb-node-js-express/)
-
-Fullstack with Spring Boot:
-> [Angular 11 + Spring Boot + MySQL](https://bezkoder.com/angular-11-spring-boot-crud/)
-
-> [Angular 11 + Spring Boot + PostgreSQL](https://bezkoder.com/angular-11-spring-boot-postgresql/)
-
-> [Angular 11 + Spring Boot + MongoDB](https://bezkoder.com/angular-11-spring-boot-mongodb/)
-
-Fullstack with Django:
-
-> [Angular 11 + Django Rest Framework](https://bezkoder.com/django-angular-11-crud-rest-framework/)
+@angular-devkit/architect       0.1100.7
+@angular-devkit/build-angular   0.1100.7
+@angular-devkit/core            11.0.7
+@angular-devkit/schematics      11.0.7
+@angular/cli                    11.0.7
+@angular/fire                   6.1.4
+@angular/localize               11.2.8
+@schematics/angular             11.0.7
+@schematics/update              0.1100.7
+rxjs                            6.6.7
+typescript                      4.0.7
 
 ## Development server
 
@@ -51,3 +39,14 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Capacitor
+capacitor permite convertir web en app.
+
+## Firebase deploy
+
+ng deploy
+
+firebase login
+firebase init
+firebase deploy
