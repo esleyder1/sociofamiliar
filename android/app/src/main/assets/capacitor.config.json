@@ -1,0 +1,13 @@
+{
+  "appId": "com.dev.sociofamiliar",
+  "appName": "Angular11FirestoreCrud",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "dist/Angular11FirestoreCrud",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}
