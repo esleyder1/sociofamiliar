@@ -33,6 +33,7 @@ export class AddninioComponent implements OnInit {
 
   form = new FormGroup({
     uds: new FormControl('', [Validators.required, Validators.minLength(10)]),
+    codigoUds: new FormControl('', [Validators.required, Validators.minLength(10)]),
     primerNombre: new FormControl('', [Validators.required, Validators.minLength(10)]),
     title: new FormControl('', [Validators.required, Validators.minLength(10)]),
     description: new FormControl('', [Validators.required, Validators.minLength(10)]),
@@ -65,7 +66,7 @@ export class AddninioComponent implements OnInit {
     this.ninioService
     .create(this.ninio)
     .then(() => {
-      alert('Created new item successfully!');
+
       this.submitted = true;
     });
   }

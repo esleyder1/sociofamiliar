@@ -50,20 +50,20 @@
               </div>
 
               <div class="form-group">
-                <label for="uds">Codigo de la UDS en Cuentame*</label>
+                <label for="codigoUds">Codigo de la UDS en Cuentame*</label>
                 <input
-                formControlName="uds"
+                formControlName="codigoUds"
                   type="text"
                   class="form-control"
-                  [ngClass]="{ 'is-invalid': form.get('uds')?.dirty && form.get('uds')?.invalid }" 
-                  id="uds"
+                  [ngClass]="{ 'is-invalid': form.get('codigoUds')?.dirty && form.get('codigoUds')?.invalid }" 
+                  id="codigoUds"
                   required
                   autocomplete="off"
                 />
                 <div  class="invalid-feedback">
-                  <div *ngIf="form.get('uds')?.errors && form.get('uds')?.dirty" >
-                    <div *ngIf="form.get('uds')?.hasError('required')" >{{"app.v.req" | translate}}</div>
-                    <div *ngIf="form.get('uds')?.hasError('minlength')" >{{"app.v.min" | translate:{"num": '10'} }}</div>
+                  <div *ngIf="form.get('codigoUds')?.errors && form.get('codigoUds')?.dirty" >
+                    <div *ngIf="form.get('codigoUds')?.hasError('required')" >{{"app.v.req" | translate}}</div>
+                    <div *ngIf="form.get('codigoUds')?.hasError('minlength')" >{{"app.v.min" | translate:{"num": '10'} }}</div>
                   </div>
                 </div>
               </div>
