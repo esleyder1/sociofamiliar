@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {TranslateService} from '@ngx-translate/core';
+import { Plugins } from '@capacitor/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Socio Familiar';
+
+  constructor(t: TranslateService) {
+    t.addLangs(['es', 'nasa'])
+      t.setDefaultLang('es');
+      t.use('es');
+  }
+
 }

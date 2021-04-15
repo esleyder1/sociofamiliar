@@ -1,0 +1,16 @@
+{
+    "app":  {
+        "name": "Socio Familiar",
+        "v": {
+            "req": "Este campo es obligatorio",
+            "min": "Debe tener mínimo {{num}} caracteres",
+            "num": "Debe contener sólo números",
+            "form_child": {
+                "title": {
+                    "required": "El valor es requerido",
+                    "min": "debe ser mínimo 5 digitos"
+                }
+            }
+        } 
+    }
+}
