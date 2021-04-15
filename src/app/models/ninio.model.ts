@@ -23,8 +23,18 @@ export default class Ninio {
   nombreEPS?: string;
   cvActualizado?: string;
   cvNoActualizadoRazon?: string;
-
+  controlSaludOral?: string;
+  controlSaludOralMotivo?: string;
+  valoracionOftamologica?: string;
+  valoracionAuditiva?: string;
+  motivoConsultaExterna?: string;
+  alergico?: string;
+  alergicoMedicamento?: string;
   /*NUTRICIÓN Y MEDIDAS ANTROPOMETRICAS*/
+  carneCYD?: string;
+  peso?: string;
+  talla?: string;
+  dietaEspecial?: string;
 
   /*INFORMACIÓN PARA NIÑAS Y NIÑOS MENORES DE 6 MESES*/
 
@@ -41,4 +51,6 @@ export default class Ninio {
   
   description?: string;
   published?: boolean;
+  title?: string;;
+  description?: string;
 }
