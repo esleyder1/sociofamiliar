@@ -1,16 +1,21 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import {
+  AngularFirestore,
+  AngularFirestoreCollection,
+} from '@angular/fire/firestore';
 import ninio from '../models/ninio.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ninioService {
   private dbPath = '/ninios';
 
   niniosRef: AngularFirestoreCollection<ninio>;
 
-  constructor(private db: AngularFirestore) {
+  constructor(private db: AngularFirestore, private http: HttpClient) {
     this.niniosRef = db.collection(this.dbPath);
   }
 
@@ -28,5 +33,8 @@ export class ninioService {
 
   delete(id: string): Promise<void> {
     return this.niniosRef.doc(id).delete();
+  }
+  getUsers(): Observable<any> {
+    return this.http.get('https://reqres.in/api/users?page=2');
   }
 }

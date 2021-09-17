@@ -5,6 +5,7 @@ export default class Ninio {
   codigoUds?: string;
   servicioUds?: string;
   /*INFORMACIÓN DEL USUARIO (NIÑA/NIÑO)*/
+  fechaNacimiento?: string;
   primerNombre?: string;
   segundoNombre?: string;
   pimerApellido?: string;
@@ -52,5 +53,8 @@ export default class Ninio {
   description?: string;
   published?: boolean;
   title?: string;;
-  description?: string;
+
+  constructor(fechaNacimiento?: string) {
+    this.fechaNacimiento = fechaNacimiento;
+  }
 }

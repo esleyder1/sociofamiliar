@@ -137,6 +137,61 @@
               INFORMACIÓN DEL USUARIO (NIÑA/NIÑO)
             </li>
             <div class="section-form">
+
+              <!--fecha de nacimiento-->
+              <div class="form-group">
+                <label for="description">Fecha de nacimiento*</label>
+                <input
+                (change)="obtenerFaseLunar($event)"
+                [(ngModel)]="ninio.fechaNacimiento"
+                formControlName="fechaNacimiento"
+                  type="date"
+                  class="form-control"
+                  [ngClass]="{ 'is-invalid': form.get('primerNombre')?.dirty && form.get('primerNombre')?.invalid }" 
+                  id="fechaNacimiento"
+                  required
+                  autocomplete="off"
+                />
+                <div  class="invalid-feedback">
+                  <div *ngIf="form.get('primerNombre')?.errors && form.get('primerNombre')?.dirty" >
+                    <div *ngIf="form.get('primerNombre')?.hasError('required')" >{{"app.v.req" | translate}}</div>
+                    <div *ngIf="form.get('primerNombre')?.hasError('minlength')" >{{"app.v.min" | translate:{"num": '10'} }}</div>
+                  </div>
+                </div>   
+                              
+              <div *ngIf="mostrarFasesLuna">
+                <br>
+                <div class="card">
+                  <div class="card-header">
+                    Fase lunar
+                  </div>
+                  <div class="card-body">
+                    <h6 class="card-title">{{ luna.nombreNasa}} - {{ luna.nombreEsp}}</h6>
+                    <p class="card-text"> 
+                      {{ luna.fase}} ({{luna.edad}} días) - {{luna.imagen}}
+                    </p>
+                    
+                  </div>
+                </div>
+                <br>
+                <div class="card">
+                  <div class="card-header">
+                    Época solar
+                  </div>
+                  <div class="card-body">
+                    <h6 class="card-title">{{ sol.nombreNasa}} - ({{ sol.nombreEsp}})</h6>
+                    <p class="card-text">{{ sol.fecha}}</p>
+                    
+                  </div>
+                </div>
+                
+              
+              
+              </div>
+           
+              </div>
+
+
               <div class="form-group">
                 <label for="description">Primer Nombre*</label>
                 <input

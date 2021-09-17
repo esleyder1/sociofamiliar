@@ -24,6 +24,9 @@ float: left;
 .col-sm.formButtons button.btn-danger {
   float: right;
   }
+  span#imagenFaseLuna {
+    font-size: 1.8em;
+  }
 @media only screen and (max-width: 600px) {
   .col-sm.formButtons button {
     width: 100%;
