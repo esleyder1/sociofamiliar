@@ -5,34 +5,34 @@ import {
   AngularFirestore,
   AngularFirestoreCollection,
 } from '@angular/fire/firestore';
-import ninio from '../models/ninio.model';
+import beneficiario from '../models/beneficiario.model';
 
 @Injectable({
   providedIn: 'root',
 })
-export class ninioService {
-  private dbPath = '/ninios';
+export class beneficiarioService {
+  private dbPath = '/beneficiarios';
 
-  niniosRef: AngularFirestoreCollection<ninio>;
+  beneficiariosRef: AngularFirestoreCollection<beneficiario>;
 
   constructor(private db: AngularFirestore, private http: HttpClient) {
-    this.niniosRef = db.collection(this.dbPath);
+    this.beneficiariosRef = db.collection(this.dbPath);
   }
 
-  getAll(): AngularFirestoreCollection<ninio> {
-    return this.niniosRef;
+  getAll(): AngularFirestoreCollection<beneficiario> {
+    return this.beneficiariosRef;
   }
 
-  create(ninio: ninio): any {
-    return this.niniosRef.add({ ...ninio });
+  create(beneficiario: beneficiario): any {
+    return this.beneficiariosRef.add({ ...beneficiario });
   }
 
   update(id: string, data: any): Promise<void> {
-    return this.niniosRef.doc(id).update(data);
+    return this.beneficiariosRef.doc(id).update(data);
   }
 
   delete(id: string): Promise<void> {
-    return this.niniosRef.doc(id).delete();
+    return this.beneficiariosRef.doc(id).delete();
   }
   getUsers(): Observable<any> {
     return this.http.get('https://reqres.in/api/users?page=2');

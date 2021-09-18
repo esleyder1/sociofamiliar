@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddninioComponent } from './add-ninio.component';
+import { AddbeneficiarioComponent } from './add-beneficiario.component';
 
-describe('AddninioComponent', () => {
-  let component: AddninioComponent;
-  let fixture: ComponentFixture<AddninioComponent>;
+describe('AddbeneficiarioComponent', () => {
+  let component: AddbeneficiarioComponent;
+  let fixture: ComponentFixture<AddbeneficiarioComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AddninioComponent ]
+      declarations: [ AddbeneficiarioComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AddninioComponent);
+    fixture = TestBed.createComponent(AddbeneficiarioComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

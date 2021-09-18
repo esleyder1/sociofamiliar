@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
-const moonjs = require('lunarphase-js');
+import {Moon} from "lunarphase-js";
 
 import Luna from 'src/app/models/Luna.model';
 import Sol from 'src/app/models/Sol.model';
-import ninio from 'src/app/models/ninio.model';
-import { ninioService } from 'src/app/services/ninio.service';
+import beneficiario from 'src/app/models/beneficiario.model';
+import { beneficiarioService } from 'src/app/services/beneficiario.service';
 import { DatePipe } from '@angular/common';
 import { ToastrService } from 'ngx-toastr';
 
@@ -20,23 +20,23 @@ import {
 import { now } from 'moment';
 
 @Component({
-  selector: 'app-add-ninio',
-  templateUrl: './add-ninio.component.html',
-  styleUrls: ['./add-ninio.component.css'],
+  selector: 'app-add-beneficiario',
+  templateUrl: './add-beneficiario.component.html',
+  styleUrls: ['./add-beneficiario.component.css'],
   providers: [DatePipe],
 })
-export class AddninioComponent implements OnInit {
+export class AddbeneficiarioComponent implements OnInit {
   users: any;
   mostrarFasesLuna = false;
   date = new Date();
-  ninio = new ninio();
+  beneficiario = new beneficiario();
   luna: Luna = new Luna()
   sol: Sol = new Sol()
 
   constructor(
     private translate: TranslateService,
     private fb: FormBuilder,
-    private ninioService: ninioService,
+    private beneficiarioService: beneficiarioService,
     public datepipe: DatePipe,
     private toastr: ToastrService
 
@@ -62,7 +62,7 @@ export class AddninioComponent implements OnInit {
   ngOnInit(): void {
     const name = this.translate.instant('app.name');
 
-    this.ninioService.getUsers().subscribe((data) => {
+    this.beneficiarioService.getUsers().subscribe((data) => {
       this.users = data;
     });
   }
@@ -88,9 +88,9 @@ export class AddninioComponent implements OnInit {
     var todate = new Date(datatodays);
     console.log(todate)
     
-    const fase = moonjs.Moon.lunarPhase(todate);
-    const edad = parseInt(moonjs.Moon.lunarAge(todate));
-    const imagen = moonjs.Moon.lunarPhaseEmoji(todate);
+    const fase = Moon.lunarPhase(todate);
+    const edad = parseInt(Moon.lunarAge(todate));
+    const imagen = Moon.lunarPhaseEmoji(todate);
 
     let faseEspaniol = this.luna.obtenerFase(fase);
     this.mostrarFasesLuna = true
@@ -107,23 +107,23 @@ export class AddninioComponent implements OnInit {
   }
   }
 
-  saveninio(): void {
+  savebeneficiario(): void {
     //mostrar mensajes de validación de formulario.
     this.showMessageValidation();
 
-    this.ninioService.create(this.ninio).then(() => {
+    this.beneficiarioService.create(this.beneficiario).then(() => {
       this.submitted = true;
     });
   }
 
-  newninio(): void {
+  newbeneficiario(): void {
     this.submitted = false;
-    this.ninio = new ninio();
+    this.beneficiario = new beneficiario();
   }
 
-  cancelninio(): void {
+  cancelbeneficiario(): void {
     this.form.markAsDirty();
-    this.ninio = new ninio();
+    this.beneficiario = new beneficiario();
     this.toastr.info('Todos los campos han sido limpiados');
   }
 }

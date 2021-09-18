@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { niniosListComponent } from './ninios-list.component';
+import { beneficiariosListComponent } from './beneficiarios-list.component';
 
-describe('niniosListComponent', () => {
-  let component: niniosListComponent;
-  let fixture: ComponentFixture<niniosListComponent>;
+describe('beneficiariosListComponent', () => {
+  let component: beneficiariosListComponent;
+  let fixture: ComponentFixture<beneficiariosListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ niniosListComponent ]
+      declarations: [ beneficiariosListComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(niniosListComponent);
+    fixture = TestBed.createComponent(beneficiariosListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

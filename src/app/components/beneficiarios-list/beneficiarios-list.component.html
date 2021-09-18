@@ -1,0 +1,28 @@
+<div class="list row">
+  <div class="col-md-6">
+    <h4>beneficiarios List</h4>
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let beneficiario of beneficiarios; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActivebeneficiario(beneficiario, i)"
+      >
+        {{ beneficiario.title }}
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <div *ngIf="currentbeneficiario">
+      <app-beneficiario-details
+        (refreshList)="refreshList()"
+        [beneficiario]="currentbeneficiario"
+      ></app-beneficiario-details>
+    </div>
+
+    <div *ngIf="!currentbeneficiario">
+      <br />
+      <p>Please click on a beneficiario...</p>
+    </div>
+  </div>
+</div>

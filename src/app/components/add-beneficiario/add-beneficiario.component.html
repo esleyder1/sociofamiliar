@@ -143,8 +143,8 @@
                 <label for="description">Fecha de nacimiento*</label>
                 <input
                 (change)="obtenerFaseLunar($event)"
-                [(ngModel)]="ninio.fechaNacimiento"
-                formControlName="fechaNacimiento"
+                
+
                   type="date"
                   class="form-control"
                   [ngClass]="{ 'is-invalid': form.get('primerNombre')?.dirty && form.get('primerNombre')?.invalid }" 
@@ -967,7 +967,7 @@
             </div>
             <div class="row">
               <div class="col-sm formButtons">
-                <button  class="btn btn-success" (click)="saveninio()">
+                <button  class="btn btn-success" (click)="savebeneficiario()">
                   Guardar Ficha
                 </button>
                 <button data-toggle="modalCancelForm" data-target="#modalCancelForm"class="btn btn-danger">
@@ -1003,7 +1003,7 @@
     </div>
   </div>
 </div>
-<!--<form class="form-group" id="form" [formGroup]="form" (submit)="saveninio()" novalidate>
+<!--<form class="form-group" id="form" [formGroup]="form" (submit)="savebeneficiario()" novalidate>
         <div *ngIf="!submitted">
           <div class="form-group">
 
@@ -1016,7 +1016,7 @@
               [ngClass]="{ 'is-invalid': form.get('title')?.dirty && form.get('title')?.invalid }" 
               id="title"
               required
-              [(ngModel)]="ninio.title"
+              [(ngModel)]="beneficiario.title"
               autocomplete="off"
             />
             <div  class="invalid-feedback">
@@ -1036,7 +1036,7 @@
               [ngClass]="{ 'is-invalid': form.get('description')?.dirty && form.get('description')?.invalid }" 
               id="description"
               required
-              [(ngModel)]="ninio.description"
+              [(ngModel)]="beneficiario.description"
             />
             <div  class="invalid-feedback">
               <div *ngIf="form.get('description')?.errors && form.get('description')?.dirty" >
@@ -1050,7 +1050,7 @@
       
         <div *ngIf="submitted">
           <h4>You submitted successfully!</h4>
-          <button class="btn btn-success" (click)="newninio()" disabled="!form.form.valid" >Add</button>
+          <button class="btn btn-success" (click)="newbeneficiario()" disabled="!form.form.valid" >Add</button>
         </div>
       </div>
 

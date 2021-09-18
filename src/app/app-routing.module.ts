@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { niniosListComponent } from './components/ninios-list/ninios-list.component';
-import { AddninioComponent } from './components/add-ninio/add-ninio.component';
+import { beneficiariosListComponent } from './components/beneficiarios-list/beneficiarios-list.component';
+import { AddbeneficiarioComponent } from './components/add-beneficiario/add-beneficiario.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'ninios', pathMatch: 'full' },
-  { path: 'ninios', component: niniosListComponent },
-  { path: 'add', component: AddninioComponent }
+  { path: '', redirectTo: 'beneficiarios', pathMatch: 'full' },
+  { path: 'beneficiarios', component: beneficiariosListComponent },
+  { path: 'add', component: AddbeneficiarioComponent }
 ];
 
 @NgModule({

@@ -1,7 +1,7 @@
-import { ninio } from './ninio.model';
+import { beneficiario } from './beneficiario.model';
 
-describe('ninio', () => {
+describe('beneficiario', () => {
   it('should create an instance', () => {
-    expect(new ninio()).toBeTruthy();
+    expect(new beneficiario()).toBeTruthy();
   });
 });

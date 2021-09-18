@@ -15,9 +15,9 @@ import { environment } from '../environments/environment';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AddninioComponent } from './components/add-ninio/add-ninio.component';
-import { ninioDetailsComponent } from './components/ninio-details/ninio-details.component';
-import { niniosListComponent } from './components/ninios-list/ninios-list.component';
+import { AddbeneficiarioComponent } from './components/add-beneficiario/add-beneficiario.component';
+import { beneficiarioDetailsComponent } from './components/beneficiario-details/beneficiario-details.component';
+import { beneficiariosListComponent } from './components/beneficiarios-list/beneficiarios-list.component';
 
 //i18n
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
@@ -34,9 +34,9 @@ export function HttpLoaderFactory(http: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
-    AddninioComponent,
-    ninioDetailsComponent,
-    niniosListComponent
+    AddbeneficiarioComponent,
+    beneficiarioDetailsComponent,
+    beneficiariosListComponent
   ],
   imports: [
     CommonModule,

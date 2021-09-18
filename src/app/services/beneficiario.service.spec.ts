@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ninioService } from './ninio.service';
+import { beneficiarioService } from './beneficiario.service';
 
-describe('ninioService', () => {
-  let service: ninioService;
+describe('beneficiarioService', () => {
+  let service: beneficiarioService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(ninioService);
+    service = TestBed.inject(beneficiarioService);
   });
 
   it('should be created', () => {

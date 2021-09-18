@@ -1,5 +1,5 @@
-<div *ngIf="currentninio" class="edit-form">
-  <h4>ninio</h4>
+<div *ngIf="currentbeneficiario" class="edit-form">
+  <h4>beneficiario</h4>
   <form>
     <div class="form-group">
       <label for="title">Title</label>
@@ -7,7 +7,7 @@
         type="text"
         class="form-control"
         id="title"
-        [(ngModel)]="currentninio.title"
+        [(ngModel)]="currentbeneficiario.title"
         name="title"
       />
     </div>
@@ -17,43 +17,43 @@
         type="text"
         class="form-control"
         id="description"
-        [(ngModel)]="currentninio.description"
+        [(ngModel)]="currentbeneficiario.description"
         name="description"
       />
     </div>
 
     <div class="form-group">
       <label><strong>Status:</strong></label>
-      {{ currentninio.published ? "Published" : "Pending" }}
+      {{ currentbeneficiario.published ? "Published" : "Pending" }}
     </div>
   </form>
 
   <button
     class="badge badge-primary mr-2"
-    *ngIf="currentninio.published"
+    *ngIf="currentbeneficiario.published"
     (click)="updatePublished(false)"
   >
     UnPublish
   </button>
   <button
-    *ngIf="!currentninio.published"
+    *ngIf="!currentbeneficiario.published"
     class="badge badge-primary mr-2"
     (click)="updatePublished(true)"
   >
     Publish
   </button>
 
-  <button class="badge badge-danger mr-2" (click)="deleteninio()">
+  <button class="badge badge-danger mr-2" (click)="deletebeneficiario()">
     Delete
   </button>
 
-  <button type="submit" class="badge badge-success" (click)="updateninio()">
+  <button type="submit" class="badge badge-success" (click)="updatebeneficiario()">
     Update
   </button>
   <p>{{ message }}</p>
 </div>
 
-<div *ngIf="!currentninio">
+<div *ngIf="!currentbeneficiario">
   <br />
-  <p>Cannot access this ninio...</p>
+  <p>Cannot access this beneficiario...</p>
 </div>
